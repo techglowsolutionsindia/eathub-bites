@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Checkout | EatHub</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Checkout CSS -->
+    <link rel="stylesheet" href="checkout.css" />
+
+    <!-- EatHub Authentication CSS -->
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+
+  <body>
+    <!-- Checkout Header -->
+    <header class="checkout-header">
+      <div class="checkout-wrapper header-inner">
+        <a href="index.html" class="checkout-logo">
+          <img src="images/food-delivery-logo.webp" alt="EatHub Logo" />
+
+          <span>EatHub</span>
+        </a>
+
+        <a href="index.html#menu" class="back-to-menu">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Menu
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Checkout Area -->
+    <main class="checkout-main">
+      <div class="checkout-wrapper">
+        <div class="checkout-heading">
+          <p class="checkout-label">Secure Checkout</p>
+
+          <h1>Complete Your Order</h1>
+
+          <p class="checkout-intro">
+            Enter your delivery details, review your order and choose your
+            preferred payment method.
+          </p>
+        </div>
+
+        <div class="checkout-layout">
+          <!-- Left Side -->
+          <section class="checkout-form-section">
+            <form id="checkoutForm" novalidate>
+              <!-- Customer Details -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <div class="checkout-step-number">1</div>
+
+                  <div>
+                    <h2>Customer Details</h2>
+
+                    <p>Tell us who is placing the order.</p>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group full-width">
+                    <label for="fullName">Full Name</label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-user"></i>
+
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                      />
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-phone"></i>
+
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        autocomplete="tel"
+                      />
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-envelope"></i>
+
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                      />
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delivery Address -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <div class="checkout-step-number">2</div>
+
+                  <div>
+                    <h2>Delivery Address</h2>
+
+                    <p>Where should we deliver your order?</p>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group full-width">
+                    <label for="address">Complete Address</label>
+
+                    <div class="input-wrapper textarea-wrapper">
+                      <i class="fa-solid fa-location-dot"></i>
+
+                      <textarea
+                        id="address"
+                        name="address"
+                        rows="4"
+                        placeholder="Flat, building, street and area"
+                        autocomplete="street-address"
+                      ></textarea>
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="city">City</label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-city"></i>
+
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Enter city"
+                        autocomplete="address-level2"
+                      />
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="pincode">PIN Code</label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-map-pin"></i>
+
+                      <input
+                        type="text"
+                        id="pincode"
+                        name="pincode"
+                        placeholder="6-digit PIN code"
+                        maxlength="6"
+                        autocomplete="postal-code"
+                      />
+                    </div>
+
+                    <small class="error-message"></small>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="landmark">
+                      Landmark
+                      <span class="optional-text">(Optional)</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-location-crosshairs"></i>
+
+                      <input
+                        type="text"
+                        id="landmark"
+                        name="landmark"
+                        placeholder="Nearby landmark"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="instructions">
+                      Delivery Instructions
+                      <span class="optional-text">(Optional)</span>
+                    </label>
+
+                    <div class="input-wrapper textarea-wrapper">
+                      <i class="fa-solid fa-note-sticky"></i>
+
+                      <textarea
+                        id="instructions"
+                        name="instructions"
+                        rows="3"
+                        placeholder="Example: Call on arrival"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <div class="checkout-step-number">3</div>
+
+                  <div>
+                    <h2>Payment Method</h2>
+
+                    <p>Choose how you would like to pay.</p>
+                  </div>
+                </div>
+
+                <div class="payment-options">
+                  <label class="payment-option active">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="Cash on Delivery"
+                      checked
+                    />
+
+                    <span class="payment-icon">
+                      <i class="fa-solid fa-money-bill-wave"></i>
+                    </span>
+
+                    <span class="payment-text">
+                      <strong>Cash on Delivery</strong>
+                      <small>Pay when your order arrives</small>
+                    </span>
+
+                    <span class="payment-check">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="UPI" />
+
+                    <span class="payment-icon">
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                    </span>
+
+                    <span class="payment-text">
+                      <strong>UPI Payment</strong>
+                      <small>Demo option for portfolio use</small>
+                    </span>
+
+                    <span class="payment-check">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="Card" />
+
+                    <span class="payment-icon">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </span>
+
+                    <span class="payment-text">
+                      <strong>Credit or Debit Card</strong>
+                      <small>Demo option for portfolio use</small>
+                    </span>
+
+                    <span class="payment-check">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="demo-payment-note">
+                  <i class="fa-solid fa-circle-info"></i>
+
+                  <p>
+                    This is a portfolio demo. No real payment will be processed.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right Side Order Summary -->
+          <aside class="order-summary-section">
+            <div class="order-summary-card">
+              <div class="summary-header">
+                <div>
+                  <p class="summary-label">Your Order</p>
+                  <h2>Order Summary</h2>
+                </div>
+
+                <span class="summary-item-count">
+                  <span id="summaryItemCount">0</span>
+                  items
+                </span>
+              </div>
+
+              <div id="checkoutItems" class="checkout-items"></div>
+
+              <div id="checkoutEmptyState" class="checkout-empty-state">
+                <i class="fa-solid fa-basket-shopping"></i>
+
+                <h3>Your cart is empty</h3>
+
+                <p>Add some dishes before continuing to checkout.</p>
+
+                <a href="index.html#menu" class="return-menu-btn">
+                  Return to Menu
+                </a>
+              </div>
+
+              <div class="price-summary">
+                <div class="price-row">
+                  <span>Subtotal</span>
+                  <strong id="subtotalAmount">₹0</strong>
+                </div>
+
+                <div class="price-row">
+                  <span>Delivery Fee</span>
+                  <strong id="deliveryFeeAmount">₹0</strong>
+                </div>
+
+                <div class="price-row discount-row">
+                  <span>Discount</span>
+                  <strong id="discountAmount">− ₹0</strong>
+                </div>
+
+                <div class="price-divider"></div>
+
+                <div class="price-row grand-total-row">
+                  <span>Grand Total</span>
+                  <strong id="grandTotalAmount">₹0</strong>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                form="checkoutForm"
+                id="placeOrderBtn"
+                class="place-order-btn"
+              >
+                <span>Place Order</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <div class="secure-order-note">
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Your order details are safe and secure.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- Order Success Modal -->
+    <div id="orderSuccessModal" class="success-modal" aria-hidden="true">
+      <div class="success-modal-box">
+        <div class="success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <p class="success-label">Order Confirmed</p>
+
+        <h2>Thank You for Your Order!</h2>
+
+        <p class="success-message">
+          Your food is being prepared and will be delivered soon.
+        </p>
+
+        <!-- Estimated Delivery -->
+        <div class="delivery-estimate">
+          <i class="fa-solid fa-clock"></i>
+
+          <div>
+            <span>Estimated Delivery</span>
+            <strong>30–40 minutes</strong>
+          </div>
+        </div>
+
+        <div class="success-order-info">
+          <div>
+            <span>Order ID</span>
+            <strong id="successOrderId">EAT000000</strong>
+          </div>
+
+          <div>
+            <span>Order Total</span>
+            <strong id="successOrderTotal">₹0</strong>
+          </div>
+
+          <div>
+            <span>Payment</span>
+            <strong id="successPaymentMethod"> Cash on Delivery </strong>
+          </div>
+        </div>
+
+        <div class="success-action-buttons">
+          <a href="orders.html" class="view-order-btn">
+            <i class="fa-solid fa-receipt"></i>
+            View Order
+          </a>
+
+          <a href="index.html#menu" class="success-home-btn"> Back to Menu </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EatHub Authentication JavaScript -->
+    <script defer src="auth.js"></script>
+
+    <!-- Checkout JavaScript -->
+    <script defer src="checkout.js"></script>
+  </body>
+</html>

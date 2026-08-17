@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Orders | EatHub</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Orders CSS -->
+    <link rel="stylesheet" href="orders.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="orders-header">
+      <div class="orders-wrapper header-inner">
+        <a href="index.html" class="orders-logo">
+          <img src="images/food-delivery-logo.webp" alt="EatHub Logo" />
+
+          <span>EatHub</span>
+        </a>
+
+        <div class="header-actions">
+          <a href="index.html#menu" class="back-menu-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Menu</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="orders-main">
+      <div class="orders-wrapper">
+        <!-- Page Heading -->
+        <section class="orders-heading">
+          <p class="orders-label">My Account</p>
+
+          <h1>
+            My Orders
+            <span class="page-orders-count">
+              (<span id="pageOrdersCount">0</span>)
+            </span>
+          </h1>
+
+          <p>
+            View all your EatHub orders and click any order to see its complete
+            details.
+          </p>
+        </section>
+
+        <!-- No Order State -->
+        <section id="noOrderState" class="no-order-state">
+          <div class="no-order-icon">
+            <i class="fa-solid fa-receipt"></i>
+          </div>
+
+          <h2>No recent order found</h2>
+
+          <p>
+            You have not completed an order yet. Explore the menu and place your
+            first order.
+          </p>
+
+          <a href="index.html#menu" class="browse-menu-btn"> Browse Menu </a>
+        </section>
+
+        <!-- All Orders List -->
+        <section id="ordersHistorySection" class="orders-history-section">
+          <div class="orders-table-wrapper">
+            <!-- Table Headings -->
+            <div class="orders-table-header">
+              <span>Order ID</span>
+              <span>Order Date</span>
+              <span>Payment</span>
+              <span>Total</span>
+              <span>Status</span>
+              <span>View</span>
+            </div>
+
+            <!-- Orders will load here -->
+            <div id="ordersList" class="orders-list"></div>
+          </div>
+        </section>
+
+        <!-- Order Content -->
+        <section id="orderContent" class="order-content">
+          <!-- Main Layout -->
+          <div class="order-layout">
+            <!-- Left Column -->
+            <div class="order-left-column">
+              <!-- Products -->
+              <section class="orders-card ordered-items-card">
+                <div class="card-heading">
+                  <div>
+                    <p class="section-label">Order Items</p>
+                    <h2>Ordered Dishes</h2>
+                  </div>
+
+                  <span class="item-count-badge">
+                    <span id="orderedItemCount">0</span>
+                    items
+                  </span>
+                </div>
+
+                <div id="orderedItemsList" class="ordered-items-list"></div>
+              </section>
+
+              <!-- Delivery Details -->
+              <section class="orders-card">
+                <div class="card-heading">
+                  <div>
+                    <p class="section-label">Delivery Details</p>
+                    <h2>Customer & Address</h2>
+                  </div>
+
+                  <div class="heading-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                </div>
+
+                <div class="delivery-details-grid">
+                  <div class="detail-row">
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                      <span>Customer Name</span>
+                      <strong id="customerName">—</strong>
+                    </div>
+                  </div>
+
+                  <div class="detail-row">
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                      <span>Mobile Number</span>
+                      <strong id="customerPhone">—</strong>
+                    </div>
+                  </div>
+
+                  <div class="detail-row">
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                      <span>Email Address</span>
+                      <strong id="customerEmail">—</strong>
+                    </div>
+                  </div>
+
+                  <div class="detail-row full-width">
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <div>
+                      <span>Delivery Address</span>
+                      <strong id="customerAddress">—</strong>
+                    </div>
+                  </div>
+
+                  <div
+                    id="landmarkRow"
+                    class="detail-row full-width optional-detail"
+                  >
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+
+                    <div>
+                      <span>Landmark</span>
+                      <strong id="customerLandmark">—</strong>
+                    </div>
+                  </div>
+
+                  <div
+                    id="instructionsRow"
+                    class="detail-row full-width optional-detail"
+                  >
+                    <div class="detail-icon">
+                      <i class="fa-solid fa-note-sticky"></i>
+                    </div>
+
+                    <div>
+                      <span>Delivery Instructions</span>
+                      <strong id="deliveryInstructions">—</strong>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Right Column -->
+            <aside class="order-right-column">
+              <section class="orders-card payment-summary-card">
+                <div class="card-heading">
+                  <div>
+                    <p class="section-label">Payment Details</p>
+                    <h2>Order Summary</h2>
+                  </div>
+
+                  <div class="heading-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                  </div>
+                </div>
+
+                <div class="payment-summary">
+                  <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="orderSubtotal">₹0</strong>
+                  </div>
+
+                  <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <strong id="orderDeliveryFee">₹0</strong>
+                  </div>
+
+                  <div class="summary-row discount-row">
+                    <span>Discount</span>
+                    <strong id="orderDiscount">− ₹0</strong>
+                  </div>
+
+                  <div class="summary-divider"></div>
+
+                  <div class="summary-row grand-total-row">
+                    <span>Grand Total</span>
+                    <strong id="orderGrandTotal">₹0</strong>
+                  </div>
+                </div>
+
+                <div class="payment-status">
+                  <i class="fa-solid fa-shield-halved"></i>
+
+                  <div>
+                    <span>Payment</span>
+                    <strong id="paymentStatusText"> Cash on Delivery </strong>
+                  </div>
+                </div>
+
+                <div class="order-action-buttons">
+                  <button
+                    type="button"
+                    id="orderAgainBtn"
+                    class="order-again-btn"
+                  >
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Order Again
+                  </button>
+
+                  <a href="index.html#menu" class="menu-action-btn">
+                    Back to Menu
+                  </a>
+                </div>
+              </section>
+
+              <section class="help-card">
+                <div class="help-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div>
+                  <h3>Need help with your order?</h3>
+
+                  <p>
+                    This is a portfolio demo. Support features can be connected
+                    later.
+                  </p>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Order Again Confirmation -->
+    <div id="orderAgainModal" class="order-again-modal" aria-hidden="true">
+      <div class="order-again-modal-box">
+        <div class="modal-icon">
+          <i class="fa-solid fa-cart-plus"></i>
+        </div>
+
+        <h2>Order these items again?</h2>
+
+        <p>
+          The products from your latest order will be added back to your cart.
+        </p>
+
+        <div class="modal-actions">
+          <button
+            type="button"
+            id="cancelOrderAgain"
+            class="cancel-order-again"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="button"
+            id="confirmOrderAgain"
+            class="confirm-order-again"
+          >
+            Yes, Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders JavaScript -->
+    <script defer src="orders.js"></script>
+  </body>
+</html>
