@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Sandwich",
+    "price": "₹100/-",
+    "image": "images/sandwich.webp",
+    "description": "Fresh, filling and perfect for quick bites",
+    "rating": 4.4,
+    "time": "15–20 min"
+  },
+  {
+    "id": 2,
+    "name": "French Fries",
+    "price": "₹125/-",
+    "image": "images/french-fries.webp",
+    "description": "Golden crispy fries served hot and fresh",
+    "rating": 4.3,
+    "time": "15–18 min"
+  },
+  {
+    "id": 3,
+    "name": "Veg Burger",
+    "price": "₹150/-",
+    "image": "images/veg-burger.webp",
+    "description": "Soft bun loaded with crunchy veggie patty",
+    "rating": 4.5,
+    "time": "18–25 min"
+  },
+  {
+    "id": 4,
+    "name": "Paneer Momos",
+    "price": "₹175/-",
+    "image": "images/paneer-momos.webp",
+    "description": "Soft momos filled with paneer stuffing",
+    "rating": 4.7,
+    "time": "20–25 min"
+  },
+  {
+    "id": 5,
+    "name": "White Sauce Pasta",
+    "price": "₹300/-",
+    "image": "images/white-sauce-pasta.webp",
+    "description": "Creamy pasta tossed with herbs and vegetables",
+    "rating": 4.5,
+    "time": "22–28 min"
+  },
+  {
+    "id": 6,
+    "name": "Margherita Pizza",
+    "price": "₹475/-",
+    "image": "images/margherita-pizza.webp",
+    "description": "Cheesy pizza topped with fresh tomato and basil",
+    "rating": 4.8,
+    "time": "25–30 min"
+  },
+  {
+    "id": 7,
+    "name": "Veg Spring Roll",
+    "price": "₹210/-",
+    "image": "images/veg-spring-roll.webp",
+    "description": "Crispy rolls packed with fresh filling",
+    "rating": 4.6,
+    "time": "18–22 min"
+  },
+  {
+    "id": 8,
+    "name": "Veg Manchurian",
+    "price": "₹250/-",
+    "image": "images/veg-manchurian.webp",
+    "description": "Crispy veg balls in glossy sauce",
+    "rating": 4.6,
+    "time": "20–25 min"
+  },
+  {
+    "id": 9,
+    "name": "Veg Lollipop",
+    "price": "₹200/-",
+    "image": "images/veg-lollipop.webp",
+    "description": "Crispy veg lollipops with spicy dip",
+    "rating": 4.4,
+    "time": "18–24 min"
+  },
+  {
+    "id": 10,
+    "name": "Crispy Corn",
+    "price": "₹250/-",
+    "image": "images/crispy-corn.webp",
+    "description": "Golden crispy corn with spicy seasoning",
+    "rating": 4.5,
+    "time": "15–20 min"
+  },
+  {
+    "id": 11,
+    "name": "Paneer Chilli",
+    "price": "₹325/-",
+    "image": "images/paneer-chilli.webp",
+    "description": "Spicy paneer tossed with capsicum and onions",
+    "rating": 4.7,
+    "time": "20–28 min"
+  },
+  {
+    "id": 12,
+    "name": "Paneer Tikka",
+    "price": "₹350/-",
+    "image": "images/paneer-tikka.webp",
+    "description": "Spicy grilled paneer cubes with smoky flavour",
+    "rating": 4.8,
+    "time": "25–30 min"
+  },
+  {
+    "id": 13,
+    "name": "Dal Makhani",
+    "price": "₹280/-",
+    "image": "images/dal-makhani.webp",
+    "description": "Creamy Punjabi dal with butter and spices",
+    "rating": 4.6,
+    "time": "22–30 min"
+  },
+  {
+    "id": 14,
+    "name": "Triple Schezwan Rice",
+    "price": "₹330/-",
+    "image": "images/triple-schezwan-rice.webp",
+    "description": "Spicy rice served with noodles and gravy",
+    "rating": 4.7,
+    "time": "25–30 min"
+  },
+  {
+    "id": 15,
+    "name": "Mushroom Fried Rice",
+    "price": "₹270/-",
+    "image": "images/mushroom-fried-rice.webp",
+    "description": "Fried rice with mushrooms and vegetables",
+    "rating": 4.4,
+    "time": "20–25 min"
+  },
+  {
+    "id": 16,
+    "name": "Noodles",
+    "price": "₹350/-",
+    "image": "images/noodles.webp",
+    "description": "Fresh veggies tossed with tasty noodles",
+    "rating": 4.3,
+    "time": "18–22 min"
+  }
+]
