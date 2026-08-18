@@ -7254,7 +7254,7 @@ body.gallery-lightbox-active {
   height: calc(100vh - 80px) !important;
   min-height: calc(100vh - 80px) !important;
   box-sizing: border-box;
-  border: 4px solid red;
+  /* border: 4px solid red; */
   overflow: hidden;
 }
 
@@ -7291,7 +7291,7 @@ body.gallery-lightbox-active {
   bottom: 4px;
   left: 4px;
 
-  border: 4px solid red;
+  /* border: 4px solid red; */
   box-sizing: border-box;
   pointer-events: none;
   z-index: 100;
@@ -7323,9 +7323,9 @@ body.gallery-lightbox-active {
   overflow: hidden;
   scroll-margin-top: 80px !important;
 
-  border-top: 4px solid red !important;
+  /* border-top: 4px solid red !important;
   border-right: 4px solid red !important;
-  border-left: 4px solid red !important;
+  border-left: 4px solid red !important; */
   border-bottom: 0 !important;
 
   outline: none !important;
@@ -7343,7 +7343,7 @@ body.gallery-lightbox-active {
   position: relative;
   margin: 0 !important;
   transform: none !important;
-  border-top: 4px solid red !important;
+  /* border-top: 4px solid red !important; */
 }
 
 /* =========================================
@@ -7361,7 +7361,7 @@ body.gallery-lightbox-active {
   overflow: hidden;
   scroll-margin-top: 80px !important;
 
-  border: 4px solid red !important;
+  /* border: 4px solid red !important; */
   outline: none !important;
   box-shadow: none !important;
 }
@@ -7391,7 +7391,7 @@ body.gallery-lightbox-active {
   /* Place Gallery immediately below the navbar */
   scroll-margin-top: 80px !important;
 
-  border: 4px solid red !important;
+  /* border: 4px solid red !important; */
   outline: none !important;
   box-shadow: none !important;
 }
