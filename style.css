@@ -7462,6 +7462,223 @@ body.gallery-lightbox-active {
   height: 100% !important;
   object-fit: cover;
 }
-/* Above code is Proper June 2026 */
 
-/* End of Proper code June 2026 */
+/* ==================================================
+   OUR SERVICES - BALANCED SECTION HEIGHT
+================================================== */
+
+#services {
+  height: auto !important;
+  min-height: calc(100vh - 82px) !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 28px !important;
+  box-sizing: border-box;
+}
+
+#services .wrapper {
+  transform: translateY(-5px);
+  padding-bottom: 18px !important;
+  margin-bottom: 0 !important;
+}
+
+#services .flex.mt-4 {
+  margin-bottom: 0 !important;
+}
+
+/* ==================================================
+   HOW WE PREPARE - FINAL ANCHOR POSITION FIX
+================================================== */
+
+#how-we-prepare {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  scroll-margin-top: 0 !important;
+  background: #fffdf8 !important;
+
+  height: calc(100vh + 24px) !important;
+  min-height: calc(100vh + 24px) !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/*
+  Section itself scrolls behind the fixed navbar.
+  Only its inner content is pushed below the navbar.
+*/
+#how-we-prepare .prepare-wrapper {
+  margin: 0 auto !important;
+  padding-top: 120px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Above code are correct 20th August 2026 */
+
+/* ==================================================
+   CONTACT SECTION - BALANCED ONE-SCREEN DESKTOP FIT
+================================================== */
+
+#contact {
+  position: relative;
+
+  height: 100vh !important;
+  min-height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  scroll-margin-top: 0 !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+
+#contact .contact-wrapper {
+  height: 100%;
+  padding-top: 105px !important;
+  padding-bottom: 16px !important;
+
+  display: flex;
+  align-items: center !important;
+  gap: 55px !important;
+
+  box-sizing: border-box;
+}
+
+/* LEFT SIDE */
+#contact .section-tag {
+  margin-bottom: 10px !important;
+}
+
+#contact .contact-info h2 {
+  margin-bottom: 12px !important;
+  line-height: 1.03 !important;
+}
+
+#contact .contact-intro {
+  margin-bottom: 16px !important;
+  line-height: 1.45 !important;
+}
+
+#contact .contact-details {
+  gap: 10px !important;
+}
+
+#contact .contact-detail-item {
+  min-height: 72px !important;
+  padding: 11px 16px !important;
+}
+
+#contact .contact-detail-icon {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+/* RIGHT FORM CARD */
+#contact .contact-form-container {
+  padding: 20px 32px !important;
+}
+
+#contact .contact-form-heading {
+  margin-bottom: 12px !important;
+}
+
+#contact .contact-form-heading span {
+  margin-bottom: 4px !important;
+}
+
+#contact .contact-form-heading h3 {
+  margin-bottom: 3px !important;
+  line-height: 1.1 !important;
+}
+
+#contact .contact-form-heading p {
+  margin-bottom: 0 !important;
+}
+
+/* FORM SPACING */
+#contact .contact-form-row {
+  gap: 14px !important;
+  margin-bottom: 8px !important;
+}
+
+#contact .contact-form-group {
+  margin-bottom: 8px !important;
+}
+
+#contact .contact-form-group label {
+  margin-bottom: 4px !important;
+}
+
+/* INPUTS */
+#contact .contact-input-wrapper input,
+#contact .contact-input-wrapper select {
+  height: 44px !important;
+}
+
+/* MESSAGE */
+#contact .contact-textarea-wrapper textarea {
+  height: 82px !important;
+  min-height: 82px !important;
+  padding-top: 12px !important;
+}
+
+#contact .contact-message-meta {
+  margin-top: 2px !important;
+}
+
+/* BUTTON */
+#contact .contact-submit-btn {
+  height: 44px !important;
+  min-height: 44px !important;
+  margin-top: 0 !important;
+}
+
+/* ==================================================
+   CONTACT SECTION - INCREASE CONTENT HEIGHT MORE
+================================================== */
+
+/* Taller contact detail cards */
+#contact .contact-detail-item {
+  min-height: 84px !important;
+  padding: 15px 17px !important;
+}
+
+/* Slightly larger contact icons */
+#contact .contact-detail-icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+/* Taller form fields */
+#contact .contact-input-wrapper input,
+#contact .contact-input-wrapper select {
+  height: 54px !important;
+}
+
+/* Taller message area */
+#contact .contact-textarea-wrapper textarea {
+  height: 102px !important;
+  min-height: 102px !important;
+  padding-top: 15px !important;
+}
+
+/* More vertical spacing between form rows */
+#contact .contact-form-row {
+  margin-bottom: 15px !important;
+}
+
+#contact .contact-form-group {
+  margin-bottom: 14px !important;
+}
+
+/* Slightly more heading spacing */
+#contact .contact-form-heading {
+  margin-bottom: 18px !important;
+}
+
+/* Taller Send Message button */
+#contact .contact-submit-btn {
+  height: 52px !important;
+  min-height: 52px !important;
+}
