@@ -5010,7 +5010,8 @@ body.cart-open {
 .cart-tab {
   position: fixed;
   top: 0;
-  right: -430px;
+  right: 0;
+  transform: translateX(100%);
   bottom: 0;
 
   width: min(400px, 100%);
@@ -5028,12 +5029,12 @@ body.cart-open {
 
   box-shadow: -18px 0 45px rgba(14, 64, 45, 0.2);
 
-  transition: right 0.35s ease;
+  transition: transform 0.35s ease;
 }
 
 .cart-tab.cart-tab-active {
   right: 0;
-  inset: 0 0 0 auto;
+  transform: translateX(0);
 }
 
 /* Fixed header */
@@ -7682,3 +7683,40 @@ body.gallery-lightbox-active {
   height: 52px !important;
   min-height: 52px !important;
 }
+
+/* ==================================================
+   MOBILE HERO RESPONSIVE FIX STARTED
+================================================== */
+
+@media screen and (max-width: 780px) {
+  #home {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #home .hero-section {
+    height: auto !important;
+    min-height: 0 !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 3rem 1.5rem !important;
+  }
+
+  #home .hero-section .content,
+  #home .hero-section .image-container {
+    width: 100%;
+    min-width: 0;
+    flex-basis: auto;
+  }
+
+  #home .hero-section h1 {
+    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1.5px !important;
+  }
+}
+
+/* ==================================================
+   MOBILE HERO RESPONSIVE FIX ENDED
+================================================== */
