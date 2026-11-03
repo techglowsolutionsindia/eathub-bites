@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const nodemailer = require("nodemailer");
+// Brevo transactional email API uses HTTPS.
 
 dotenv.config();
 
@@ -32,16 +32,33 @@ const escapeHtml = (value = "") => {
     .replaceAll("'", "&#039;");
 };
 
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
+const sendBrevoEmail = async (emailData) => {
+  if (!process.env.BREVO_API_KEY) {
+    throw new Error("BREVO_API_KEY is not configured.");
+  }
 
-  auth: {
-    user: process.env.BREVO_SMTP_USER,
-    pass: process.env.BREVO_SMTP_KEY,
-  },
-});
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const result = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": process.env.BREVO_API_KEY,
+      },
+      body: JSON.stringify(emailData),
+      signal: controller.signal,
+    });
+
+    if (!result.ok) {
+      throw new Error(`Brevo API returned HTTP ${result.status}`);
+    }
+  } finally {
+    clearTimeout(timeout);
+  }
+};
 
 app.get("/", (request, response) => {
   response.send("EatHub contact server is running.");
@@ -125,16 +142,19 @@ app.post("/api/contact", async (request, response) => {
     const safeSubject = escapeHtml(cleanSubject);
     const safeMessage = escapeHtml(cleanMessage).replaceAll("\n", "<br>");
 
-    await transporter.sendMail({
-      from: `"EatHub Website" <${process.env.BREVO_SENDER_EMAIL}>`,
+    await sendBrevoEmail({
+      sender: {
+        name: "EatHub Website",
+        email: process.env.BREVO_SENDER_EMAIL,
+      },
 
-      to: process.env.OWNER_EMAIL,
+      to: [{ email: process.env.OWNER_EMAIL }],
 
-      replyTo: cleanEmail,
+      replyTo: { email: cleanEmail },
 
       subject: `EatHub Contact: ${cleanSubject}`,
 
-      text: `
+      textContent: `
 New EatHub Contact Enquiry
 
 Name: ${cleanName}
@@ -146,7 +166,7 @@ Message:
 ${cleanMessage}
       `,
 
-      html: `
+      htmlContent: `
         <div
           style="
             max-width: 650px;
@@ -340,13 +360,6 @@ ${cleanMessage}
   }
 });
 
-app.listen(PORT, async () => {
-  console.log(`EatHub server running on http://localhost:${PORT}`);
-
-  try {
-    await transporter.verify();
-    console.log("Brevo SMTP connection verified.");
-  } catch (error) {
-    console.error("Brevo SMTP verification failed:", error.message);
-  }
+app.listen(PORT, () => {
+  console.log(`EatHub server running on port ${PORT}`);
 });
