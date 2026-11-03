@@ -1010,7 +1010,7 @@ if (contactForm) {
     try {
       setContactLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(window.EATHUB_CONTACT_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
