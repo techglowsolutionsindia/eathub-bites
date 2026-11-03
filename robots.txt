@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /eathub-bites/checkout.html
+Disallow: /eathub-bites/orders.html
+
+Sitemap: https://techglowsolutionsindia.github.io/eathub-bites/sitemap.xml

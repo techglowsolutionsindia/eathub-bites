@@ -3591,12 +3591,9 @@ footer .social-icon:hover,
   column-gap: 0.7rem !important;
 }
 
-/*-----------------------------------*\
-  #NAVBAR LOGO IMAGE + TEXT FINAL
-\*-----------------------------------*/
-
+/* Navbar Brand Logo Started */
 .brand-logo {
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   gap: 0.45rem !important;
   text-decoration: none !important;
@@ -3607,6 +3604,7 @@ footer .social-icon:hover,
   height: 50px !important;
   object-fit: contain !important;
   display: block !important;
+  margin: 0 !important;
 }
 
 .brand-logo span {
@@ -3616,6 +3614,37 @@ footer .social-icon:hover,
   line-height: 1 !important;
   letter-spacing: -0.04rem !important;
 }
+/* Navbar Brand Logo Ended */
+
+/* Footer Brand Logo Started */
+.footer .footer-brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  text-decoration: none !important;
+}
+
+/* Footer Logo Visibility Started */
+.footer .footer-brand-logo img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  padding: 1px !important;
+}
+/* Footer Logo Visibility Ended */
+
+.footer .footer-brand-logo span {
+  color: #ffffff !important;
+  font-size: 1.85rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04rem !important;
+}
+/* Footer Brand Logo Ended */
 
 /*-----------------------------------*\
   #HERO IMAGE SIZE FINAL FIX

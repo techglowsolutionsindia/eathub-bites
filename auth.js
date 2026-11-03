@@ -93,7 +93,7 @@ const createEatHubAuthPopup = () => {
       <div id="authFormsView">
         <div class="auth-brand">
           <img
-            src="images/food-delivery-logo.webp"
+            src="images/logo/food-delivery-logo.svg"
             alt="EatHub Logo"
           />
           <span>EatHub</span>
