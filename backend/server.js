@@ -345,6 +345,120 @@ ${cleanMessage}
       `,
     });
 
+    // Customer Confirmation Email Started
+    try {
+      await sendBrevoEmail({
+        sender: {
+          name: "EatHub Bites",
+          email: process.env.BREVO_SENDER_EMAIL,
+        },
+
+        to: [
+          {
+            email: cleanEmail,
+            name: cleanName,
+          },
+        ],
+
+        subject: `Thank You for Contacting EatHub Bites - ${cleanSubject}`,
+
+        textContent: `
+Dear ${cleanName},
+
+Thank you for contacting EatHub Bites!
+
+We have successfully received your enquiry regarding ${cleanSubject}.
+
+Your Message:
+${cleanMessage}
+
+Our team will review your enquiry and get back to you as soon as possible.
+
+Best regards,
+EatHub Bites Team
+
+This is an automated confirmation email. Please do not reply.
+        `,
+
+        htmlContent: `
+          <div style="max-width:650px;margin:0 auto;padding:30px;background:#f6ffdf;font-family:Arial,sans-serif;color:#314438;">
+            <div style="overflow:hidden;border:1px solid #dce8ce;border-radius:18px;background:#ffffff;">
+
+              <div style="padding:22px 25px;background:#004e36;color:#ffffff;">
+                <h2 style="margin:0;font-size:23px;">
+                  Thank You for Contacting EatHub Bites!
+                </h2>
+                <p style="margin:7px 0 0;color:#dff5dd;font-size:14px;">
+                  Your enquiry has been received successfully.
+                </p>
+              </div>
+
+              <div style="padding:25px;">
+                <p>Dear ${safeName},</p>
+
+                <p style="line-height:1.7;">
+                  Thank you for reaching out to EatHub Bites!
+                  We have received your enquiry and our team
+                  will get back to you as soon as possible.
+                </p>
+
+                <h3 style="margin-top:25px;color:#004e36;">
+                  Your Enquiry Details
+                </h3>
+
+                <table cellpadding="0" cellspacing="0"
+                  style="width:100%;border-collapse:collapse;font-size:14px;">
+                  <tr>
+                    <td style="padding:12px;border-bottom:1px solid #edf0e8;font-weight:bold;">
+                      Name
+                    </td>
+                    <td style="padding:12px;border-bottom:1px solid #edf0e8;">
+                      ${safeName}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:12px;border-bottom:1px solid #edf0e8;font-weight:bold;">
+                      Subject
+                    </td>
+                    <td style="padding:12px;border-bottom:1px solid #edf0e8;">
+                      ${safeSubject}
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="margin-top:20px;padding:18px;border-left:4px solid #ffcc00;border-radius:9px;background:#f8fbe7;line-height:1.7;overflow-wrap:anywhere;">
+                  <strong style="display:block;margin-bottom:8px;">
+                    Your Message
+                  </strong>
+                  ${safeMessage}
+                </div>
+
+                <p style="margin-top:22px;line-height:1.7;">
+                  We appreciate your interest and look forward
+                  to assisting you.
+                </p>
+
+                <p style="line-height:1.7;">
+                  Best regards,<br>
+                  <strong style="color:#004e36;">EatHub Bites Team</strong>
+                </p>
+
+                <p style="margin-top:25px;padding-top:15px;border-top:1px solid #edf0e8;color:#6e7f70;font-size:12px;">
+                  This is an automated confirmation email.
+                  Please do not reply directly to this message.
+                </p>
+              </div>
+            </div>
+          </div>
+        `,
+      });
+
+      console.log("Customer confirmation email accepted by Brevo.");
+    } catch (confirmationError) {
+      console.error("Customer confirmation email failed:", confirmationError);
+    }
+    // Customer Confirmation Email Ended
+
     return response.status(200).json({
       success: true,
       message: "Your message has been sent successfully.",
