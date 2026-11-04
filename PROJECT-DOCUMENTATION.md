@@ -36,8 +36,14 @@ https://github.com/
 **Render Dashboard:**
 https://dashboard.render.com/
 
+Render Login Email:
+websphereindia7@gmail.com
+
 **Brevo Dashboard:**
 https://app.brevo.com/
+
+Brevo Login Email:
+websphereindia7@gmail.com
 
 ### 3. Technologies Used
 
@@ -55,7 +61,7 @@ Backend:
 - Node.js
 - Express.js
 - CORS
-- Nodemailer
+- Brevo Transactional Email HTTPS API
 - dotenv
 
 Hosting and Deployment:
@@ -252,34 +258,40 @@ Provider:
 Brevo
 
 Integration:
-Nodemailer with Brevo SMTP
+Brevo Transactional Email HTTPS API
 
-SMTP Host:
-smtp-relay.brevo.com
+API Endpoint:
+https://api.brevo.com/v3/smtp/email
 
-SMTP Port:
-587
+Request Method:
+POST
 
-Transport Security:
-STARTTLS-compatible SMTP configuration
+Backend File:
+backend/server.js
+
+Purpose:
+
+- Send contact enquiry notifications to the website owner.
+- Send confirmation emails to customers.
 
 Environment Variable Names:
 
-- BREVO_SMTP_USER
-- BREVO_SMTP_KEY
+- BREVO_API_KEY
 - BREVO_SENDER_EMAIL
 - OWNER_EMAIL
 - NODE_ENV
 - PORT (optional; Render can provide this automatically)
 
-The email sender and recipient are configured through environment variables.
+The backend uses HTTPS requests to Brevo's transactional email API.
+
+SMTP credentials and Nodemailer are not required for this integration.
 
 Secrets must be maintained in:
 
 - Render Environment settings
 - Local backend/.env
 
-Never include SMTP passwords, API keys, or other secret values in this document.
+Never include API keys, passwords, or other secret values in this document.
 
 ### 11. Environment File Security
 
