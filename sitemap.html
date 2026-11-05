@@ -3,24 +3,337 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>HTML Sitemap | EatHub Bites</title>
+    <meta
+      name="description"
+      content="Explore EatHub Bites website sections, including our menu, services, food preparation, gallery and contact information."
+    />
     <meta name="robots" content="noindex, follow" />
+
     <link
       rel="icon"
       type="image/svg+xml"
       href="images/logo/food-delivery-logo.svg"
     />
-  </head>
-  <body>
-    <main>
-      <h1>EatHub Bites — Sitemap</h1>
-      <p>Explore the public pages of EatHub Bites.</p>
 
-      <ul>
-        <li>
-          <a href="index.html">Home — EatHub Bites</a>
-        </li>
-      </ul>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Sitemap Styles Started -->
+    <style>
+      .sitemap-section {
+        padding: 100px 0;
+        min-height: 65vh;
+      }
+
+      .sitemap-heading {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .sitemap-heading h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 15px;
+      }
+
+      .sitemap-heading p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .sitemap-card {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+      }
+
+      .sitemap-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+      }
+
+      .sitemap-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .sitemap-links a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 18px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .sitemap-links a:hover,
+      .sitemap-links a:focus-visible {
+        border-color: #f97316;
+        color: #f97316;
+        transform: translateY(-2px);
+      }
+
+      .sitemap-links i {
+        color: #f97316;
+      }
+
+      @media (max-width: 600px) {
+        .sitemap-section {
+          padding: 60px 0;
+        }
+
+        .sitemap-card {
+          padding: 25px 20px;
+        }
+
+        .sitemap-links {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <!-- Sitemap Styles Ended -->
+  </head>
+
+  <body>
+    <!-- Header Started -->
+    <header>
+      <nav class="navbar flex between wrapper">
+        <!-- Navbar Brand Logo Started -->
+        <a href="#home" class="logo brand-logo">
+          <img
+            src="images/logo/food-delivery-logo.svg"
+            alt="EatHub Bites Logo"
+          />
+          <span>EatHub</span>
+        </a>
+        <!-- Navbar Brand Logo Ended -->
+
+        <ul class="navlist flex gap-3">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-we-prepare">How We Prepare</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <!-- <li><a href="#review">Review</a></li> -->
+          <!-- <li><a href="#download-app">Our App</a></li> -->
+          <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="#newsletter">Newsletter</a></li> -->
+          <li><a href="orders.html">My Orders</a></li>
+        </ul>
+
+        <div class="desktop-action flex gap-2">
+          <a href="#" class="cart-icon" aria-label="Open cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-value">0</span>
+          </a>
+
+          <a href="#" class="btn auth-trigger">
+            Sign In
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+
+          <a href="#" class="hamburger" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+        </div>
+
+        <ul class="mobile-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-we-prepare">How We Prepare</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#review">Review</a></li>
+          <li><a href="#download-app">Our Application</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+          <li>
+            <a href="#" class="btn auth-trigger">
+              Sign In
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Ended -->
+
+    <main>
+      <!-- Sitemap Section Started -->
+      <section class="sitemap-section">
+        <div class="wrapper">
+          <div class="sitemap-heading">
+            <h1>EatHub Bites — Sitemap</h1>
+            <p>
+              Explore our website and quickly find the information you're
+              looking for.
+            </p>
+          </div>
+
+          <div class="sitemap-card">
+            <h2>Explore EatHub Bites</h2>
+
+            <nav aria-label="HTML Sitemap">
+              <ul class="sitemap-links">
+                <li>
+                  <a href="index.html#home">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#about">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About EatHub
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#services">
+                    <i class="fa-solid fa-utensils"></i>
+                    Our Services
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#how-we-prepare">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    How We Prepare
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#menu">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Popular Dishes
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#gallery">
+                    <i class="fa-solid fa-images"></i>
+                    Food Gallery
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#review">
+                    <i class="fa-solid fa-star"></i>
+                    Customer Reviews
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html#contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+      <!-- Sitemap Section Ended -->
     </main>
+
+    <!-- Footer Started -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="wrapper footer-grid">
+          <div class="footer-wrapper footer-brand">
+            <!-- Footer Brand Logo Started -->
+            <a href="#home" class="logo footer-brand-logo">
+              <img
+                src="images/logo/food-delivery-logo.svg"
+                alt="EatHub Bites Logo"
+              />
+              <span>EatHub</span>
+            </a>
+            <!-- Footer Brand Logo Ended -->
+
+            <p class="footer-text">
+              Fresh vegetarian meals crafted with care and delivered to your
+              doorstep.
+            </p>
+
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <ul class="footer-wrapper">
+            <li><h4>Our Menu</h4></li>
+            <li><a href="#menu" class="footer-link">Popular Dishes</a></li>
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
+            <li><a href="#services" class="footer-link">How It Works</a></li>
+            <!-- <li><a href="#download-app" class="footer-link">Try Our App</a></li> -->
+            <!-- <li><a href="#newsletter" class="footer-link">Subscribe</a></li> -->
+          </ul>
+
+          <ul class="footer-wrapper">
+            <li><h4>Our Company</h4></li>
+            <li><a href="#about" class="footer-link">About EatHub</a></li>
+            <li><a href="#review" class="footer-link">Customer Reviews</a></li>
+            <li>
+              <a href="#newsletter" class="footer-link">Latest Updates</a>
+            </li>
+            <li><a href="#home" class="footer-link">Why EatHub</a></li>
+          </ul>
+
+          <ul class="footer-wrapper">
+            <li><h4>Support</h4></li>
+            <li><a href="#" class="footer-link">My Account</a></li>
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Feedback</a></li>
+            <li><a href="#contact" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 EatHub. All Rights Reserved.</p>
+          <p>Designed for fresh food lovers.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Ended -->
+
+    <script>
+      document.getElementById("footer-year").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
